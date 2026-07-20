@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useAuth } from '../hooks/useAuth'
 import { Trash2, User, ChevronDown } from "lucide-react";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const { loading, handleLogin ,user } = useAuth()
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
@@ -41,7 +39,7 @@ const Navbar = () => {
                 Dashboard
               </button>
 
-              {/* 🗑 Recycle Bin (OUTSIDE Account) */}
+
               <button
                 onClick={() => navigate("/recycle-bin")}
                 className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-red-500 to-pink-500 text-white font-semibold shadow-md hover:shadow-red-500/40 hover:scale-105 transition-all duration-300"

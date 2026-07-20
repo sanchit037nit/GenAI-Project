@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "Frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,13 +10,24 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
     "axios": "^1.18.1",
+    "framer-motion": "^12.42.2",
+    "lodash": "^4.18.1",
     "lucide-react": "^1.21.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+    "react-hot-toast": "^2.6.0",
     "react-router": "^7.18.0",
     "react-router-dom": "^7.18.0",
-    "sass": "^1.101.0"
+    "react-simple-typewriter": "^5.0.1",
+    "react-tsparticles": "^2.12.2",
+    "sass": "^1.101.0",
+    "tailwindcss": "^4.3.3",
+    "toast": "^0.5.4",
+    "toaster": "^0.1.2",
+    "zustand": "^5.0.14",
+    "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
