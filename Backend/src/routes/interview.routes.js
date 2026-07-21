@@ -1,14 +1,40 @@
-const express = require("express")
-const authMiddleware = require("../middlewares/auth.middleware")
-const interviewController = require("../controllers/interview.controller")
-const upload = require("../middlewares/file.middleware")
+import express from "express";
 
-const interviewRouter = express.Router()
+import { protectroute } from "../middlewares/authmiddleware.js";
+import upload from "../middlewares/file.middleware.js";
 
+import {
+  generateInterViewReportController,
+  getInterviewReportByIdController,
+  getAllInterviewReportsController,
+  generateResumePdfController,
+} from "../controllers/interview.controller.js";
 
-interviewRouter.post("/", authMiddleware.authUser, upload.single("resume"), interviewController.generateInterViewReportController)
-interviewRouter.get("/report/:interviewId", authMiddleware.authUser, interviewController.getInterviewReportByIdController)
-interviewRouter.get("/", authMiddleware.authUser, interviewController.getAllInterviewReportsController)
-interviewRouter.post("/resume/pdf/:interviewReportId", authMiddleware.authUser, interviewController.generateResumePdfController)
+const interviewRouter = express.Router();
 
-module.exports = interviewRouter
+interviewRouter.post(
+  "/",
+  protectroute,
+  upload.single("resume"),
+  generateInterViewReportController
+);
+
+interviewRouter.get(
+  "/report/:interviewId",
+  protectroute,
+  getInterviewReportByIdController
+);
+
+interviewRouter.get(
+  "/",
+ protectroute,
+  getAllInterviewReportsController
+);
+
+interviewRouter.post(
+  "/resume/pdf/:interviewReportId",
+  protectroute,
+  generateResumePdfController
+);
+
+export default interviewRouter;

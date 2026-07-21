@@ -3,6 +3,7 @@ import express from "express"
 import dotenv from "dotenv"
 import {connectdb} from "./src/config/db.js"
 import useroutes from "./src/routes/user.routes.js"
+import interviewRouter from "./src/routes/interview.routes.js"
 
 import cookieParser from "cookie-parser"
 import cors from "cors"
@@ -22,7 +23,7 @@ app.use(cors({
 }))
 
 app.use("/api/auth",useroutes)
-
+app.use("/api/interviewroute",interviewRouter)
 
 
 
