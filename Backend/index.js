@@ -28,6 +28,6 @@ app.use("/api/interviewroute",interviewRouter)
 
 
 app.listen(port,()=>{
-    console.log("running on port:"+ port)
+    console.log("running on port :"+ port)
     connectdb()
 });
